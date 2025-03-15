@@ -1,6 +1,7 @@
-import firebase from 'firebase/app';
-import 'firebase/auth'; // Kullanıcı doğrulama
-import 'firebase/firestore'; // Veritabanı işlemleri
+// firebase.js dosyasını şu şekilde güncelleyin:
+import { initializeApp } from 'firebase/app';  // Firebase'i başlatmak için
+import { getAuth, GoogleAuthProvider } from 'firebase/auth';  // Auth işlemleri için
+import { getFirestore } from 'firebase/firestore';  // Firestore işlemleri için
 
 const firebaseConfig = {
   apiKey: "AIzaSyDakJZtVg23I_sQlameN1UBTNB-YIpUnFg",
@@ -12,10 +13,14 @@ const firebaseConfig = {
   measurementId: "G-V5YLF4SDTX"
 };
 
-firebase.initializeApp(firebaseConfig);
+// Firebase'i başlat
+const app = initializeApp(firebaseConfig);
 
-const auth = firebase.auth();
-const db = firebase.firestore();
+// Auth ve Firestore veritabanı işlemlerini al
+const auth = getAuth(app);
+const db = getFirestore(app);
 
-export { auth, db };
+// Google provider örneği
+const provider = new GoogleAuthProvider();
 
+export { auth, db, provider };
