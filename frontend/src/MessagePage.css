@@ -1,0 +1,53 @@
+/* src/MessagePage.css */
+.message-page {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .message-list {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    height: 400px;
+    overflow-y: auto;
+  }
+  
+  .message {
+    padding: 8px;
+    border-radius: 5px;
+    margin: 5px 0;
+    background: #f1f1f1;
+  }
+  
+  .message.own {
+    background: #d1e7ff;
+    text-align: right;
+  }
+  
+  .message-form {
+    display: flex;
+    margin-top: 10px;
+  }
+  
+  .message-form input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .message-form button {
+    padding: 8px;
+    border: none;
+    background: #007bff;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .message-form button:hover {
+    background: #0056b3;
+  }
+  
