@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/banagonder/static/css/main.1a7488ce.css",
-    "main.js": "/banagonder/static/js/main.f598c3ef.js",
+    "main.css": "/banagonder/static/css/main.f86e285b.css",
+    "main.js": "/banagonder/static/js/main.22bca599.js",
     "index.html": "/banagonder/index.html",
-    "main.1a7488ce.css.map": "/banagonder/static/css/main.1a7488ce.css.map",
-    "main.f598c3ef.js.map": "/banagonder/static/js/main.f598c3ef.js.map"
+    "main.f86e285b.css.map": "/banagonder/static/css/main.f86e285b.css.map",
+    "main.22bca599.js.map": "/banagonder/static/js/main.22bca599.js.map"
   },
   "entrypoints": [
-    "static/css/main.1a7488ce.css",
-    "static/js/main.f598c3ef.js"
+    "static/css/main.f86e285b.css",
+    "static/js/main.22bca599.js"
   ]
 }
