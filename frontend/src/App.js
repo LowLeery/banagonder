@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { db, auth, provider } from "./firebase";
 import { signInWithPopup, onAuthStateChanged, signOut } from "firebase/auth";
-import { collection, addDoc, query, orderBy, onSnapshot } from "firebase/firestore";
+import { collection, addDoc, query, orderBy, onSnapshot, serverTimestamp } from "firebase/firestore";
 import Header from "./Header";
 import "./App.css";
 
@@ -13,13 +13,10 @@ function App() {
 
   // Kullanıcıyı takip et
   useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        setUser(user);
-      } else {
-        setUser(null);
-      }
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setUser(user ? user : null);
     });
+    return () => unsubscribe();
   }, []);
 
   // Mesajları Firestore'dan çek
@@ -49,7 +46,7 @@ function App() {
     await addDoc(collection(db, "messages"), {
       text: newMessage,
       user: user.displayName,
-      timestamp: new Date(),
+      timestamp: serverTimestamp(), // ✅ Firestore'un kendi timestamp'ini kullan
     });
 
     setNewMessage("");
